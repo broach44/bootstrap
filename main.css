@@ -5,3 +5,11 @@ body {
 /* .card {
     width: 18rem;
 } */
+
+.card {
+    margin: 1em;
+}
+
+.card-img-top {
+    height: 200px;
+}

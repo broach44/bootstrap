@@ -63,4 +63,24 @@ const pies = [
     printToDom('pie-zone', domString);
   };
 
-  cardBuilder(pies);
+  const buttonClick = (e) => {
+    const currentInstructor = e.target.id
+    const selectedPies = []
+    for (let i = 0; i < pies.length; i++) {
+        const pie = pies[i];
+        if (pie.instructor === currentInstructor) {
+            selectedPies.push(pie);
+        }
+    }
+    cardBuilder(selectedPies)
+}
+
+cardBuilder(pies);
+
+document.getElementById('zoe').addEventListener('click', buttonClick);
+document.getElementById('michael').addEventListener('click', buttonClick);
+document.getElementById('callan').addEventListener('click', buttonClick);
+
+document.getElementById('all').addEventListener('click', (e) => {
+    cardBuilder(pies)
+})
